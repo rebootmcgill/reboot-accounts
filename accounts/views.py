@@ -14,6 +14,6 @@ def profile(request, uid=None):
     user = get_object_or_404(User, id=uid)
     total_filled = user.machine_set.count()
     month_filled = user.machine_set.filter(request__filled_at__gte=month).count()
-    render_to_response('accounts/profile.html',
+    return render_to_response('accounts/profile.html',
         {'profile': user, 'total_filled': total_filled, 'month_filled': month_filled},
         context_instance=RequestContext(request))
