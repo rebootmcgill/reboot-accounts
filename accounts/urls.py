@@ -10,5 +10,6 @@ urlpatterns = patterns('',
             form_class=UserCreationForm,
             success_url='/'
     ), name="Registration"),
-
+    url(r'^profile/', 'accounts.views.profile', name="User-Profile"),
+    url(r'^profile/(?P<uid>\d+)/', 'accounts.views.profile', name="Profile"),
 )

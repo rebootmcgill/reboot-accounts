@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} - Profile - {{ profile.get_username }}{% endblock %}
+{% load bootstrap %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="page-header">
+			<h1>Profile<small>{{ profile.get_full_name }}</small></h1>
+		</div>
+		<dl>
+			<dt>Role</dt>
+			<dd>{% if profile.is_staff %}Staff{% else %}Member{% endif %}</dd>
+			<dt>Total Fulfilled Orders</dt>
+			<dd>{{total_filled}}</dd>
+			<dt>Fulfilled Orders this Month</dt>
+			<dd>{{month_filled}}</dd>
+		</dl>
+	</div>
+</div>
+{% endblock %}
