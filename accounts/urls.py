@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 from django.views.generic.edit import CreateView
-from django.contrib.auth.forms import UserCreationForm
+from accounts.forms import UserCreationForm
 
 urlpatterns = patterns('',
     #url(r'^$', UnfilledRequestsList.as_view()),
