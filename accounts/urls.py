@@ -5,6 +5,7 @@ from accounts.forms import UserCreationForm
 urlpatterns = patterns('',
     #url(r'^$', UnfilledRequestsList.as_view()),
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'accounts/login.html'}),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'accounts/logout.html'}),
     url(r'^register/$', CreateView.as_view(
             template_name='accounts/registration.html',
             form_class=UserCreationForm,
